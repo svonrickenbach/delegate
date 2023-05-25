@@ -55,10 +55,10 @@
 				<form:textarea path="description" rows="4" class="input" />
 		    </div>
 		    <div class="form-row">
-		        <form:label path="dueDate"  for="dueDate">Due Date:</form:label>
+		        <form:label path="deadline"  for="deadline">Deadline:</form:label>
 		        <br/>
-				<form:input  path="dueDate" type="date"/>
-		        <form:errors path="dueDate" class="text-danger"/>
+				<form:input  path="deadline" type="date"/>
+		        <form:errors path="deadline" class="text-danger"/>
 		   </div>
 		        <form:errors path="lead" class="error"/>
 				<form:input type="hidden" path="lead" value="${userId}" class="form-control"/>

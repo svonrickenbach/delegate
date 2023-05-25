@@ -16,7 +16,6 @@
 </head>
 <body class="bg-secondary">
 
-<!-- Navbar links -->
 	<div class="row justify-content-center">
 	  	<div class="d-flex-row align-items-center">
 			  <nav class="navbar" style="background-color: #000000;">
@@ -39,7 +38,6 @@
 	  	</div>
 	</div>
 
-<!--Update Creation -->
 <div class="container">
 	<h4 class="mainText">Edit Project!</h4>
 	<a class="linkBtn" href="/dashboard" >Cancel</a>
@@ -56,10 +54,10 @@
 				<form:textarea rows="4" class="input" path="description" value="${project.description}"/>
 			</div>
 			<div class="form-row">
-				<form:label path="dueDate"  for="dueDate">Due Date:</form:label>
+				<form:label path="deadline"  for="dueDate">Due Date:</form:label>
 			     <br/>
-			    <form:errors path="dueDate" class="text-danger"/>
-				<form:input path="dueDate" type="date" value="${project.dueDate}"/>
+			    <form:errors path="deadline" class="text-danger"/>
+				<form:input path="deadline" type="date" value="${project.deadline}"/>
 			</div>
 			  <input class="input" type="submit" value="Submit"/>
 		</form:form>

@@ -1,5 +1,5 @@
 package com.codo.delegate.controllers;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession; 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.codo.delegate.models.LoginUser;
 import com.codo.delegate.models.Project;
@@ -82,7 +81,7 @@ public class MainController {
 		return "dashboard.jsp";
 	}
 	
-	@RequestMapping("/dashboard/join/{id}")
+	@GetMapping("/dashboard/join/{id}")
 	public String joinTeam(@PathVariable("id") Long id, HttpSession session, Model model) {
 		
 		if(session.getAttribute("userId") == null) {
@@ -103,7 +102,7 @@ public class MainController {
 		return "redirect:/dashboard";
 	}
 	
-	@RequestMapping("/dashboard/leave/{id}")
+	@GetMapping("/dashboard/leave/{id}")
 	public String leaveTeam(@PathVariable("id") Long id, HttpSession session, Model model) {
 		
 		if(session.getAttribute("userId") == null) {
@@ -173,7 +172,7 @@ public class MainController {
 		}
 	}
 	
-	@RequestMapping("/projects/delete/{id}")
+	@GetMapping("/projects/delete/{id}")
 	public String deleteProject(@PathVariable("id") Long id, HttpSession session) {
 		
 		if(session.getAttribute("userId") == null) {

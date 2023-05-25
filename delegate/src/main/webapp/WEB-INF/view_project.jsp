@@ -15,7 +15,6 @@
 </head>
 <body class="bg-secondary">
 
-	<!-- Navbar links -->
 		<div class="row justify-content-center">
 		  	<div class="d-flex-row align-items-center">
 				  <nav class="navbar" style="background-color: #000000;">
@@ -38,7 +37,6 @@
 		  	</div>
 		</div>
 		
-		<!--Details  -->
 		<div class="container">
 		<h4>Project Details</h4>
 		<hr/>
@@ -53,7 +51,7 @@
 			        </tr>
 			        
 			        <tr>
-			            <td>Due Date: <fmt:formatDate value="${project.dueDate}" pattern="MMMM dd"/></td>
+			            <td>Deadline: <fmt:formatDate value="${project.deadline}" pattern="MMMM dd"/></td>
 			        </tr>
 			    </tbody>
 			</table>

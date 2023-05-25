@@ -42,17 +42,16 @@ public class User {
     @Size(min=3, max=30, message="Last Name must be between 3 and 30 characters")
     private String lastName;
     
-    @NotEmpty(message="Email is required!")
+    @NotEmpty(message="An email is required!")
     @Email(message="Please enter a valid email!")
     private String email;
     
-    @NotEmpty(message="Password is required!")
+    @NotEmpty(message="Please enter a password!")
     @Size(min=8, max=128, message="Password must be between 8 and 128 characters")
     private String password;
     
     @Transient
-    @NotEmpty(message="Confirm Password is required!")
-    @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
+    @NotEmpty(message="You must confirm your password!")
     private String confirm;
     
     @Column(updatable=false)

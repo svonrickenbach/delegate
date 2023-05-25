@@ -36,7 +36,6 @@
 	  	</div>
 	</div>
 	
-<!-- Listed Table -->
 	<div class="container">
 	<h4>Listed Projects</h4>
 	<hr/>
@@ -44,7 +43,7 @@
 		    <thead> 
 		    	<tr>
 		    		<th>Project</th>
-		    		<th>Due Date</th>
+		    		<th>Deadline</th>
 		    		<th>......</th>
 		    	</tr>
 		    </thead>
@@ -53,7 +52,7 @@
 				<tr>
 					<c:if test = "${project.lead.id!=user.id}">
 						<td><a href="/projects/${project.id}">${project.title}</a></td>
-						<td><fmt:formatDate value="${project.dueDate}" pattern="MMMM dd"/></td>
+						<td><fmt:formatDate value="${project.deadline}" pattern="MMMM dd"/></td>
 					    <td><a href="/dashboard/join/${project.id}">Join Team</a></td>
 				    </c:if>
 				</tr>	
@@ -63,7 +62,6 @@
 	</div>
 <hr>
 
-<!-- Owner Table -->
 <div class="container">
 	<h4>Your Projects</h4>
 		<table class="table">
@@ -71,7 +69,7 @@
 		    	<tr>
 		    		<th>Project</th>
 		    		<th>Team Lead</th>
-		    		<th>Due Date</th>
+		    		<th>Deadline</th>
 		    		<th>Actions</th>
 		    	</tr>
 		    </thead>
@@ -80,7 +78,7 @@
 				<tr>
 					<td><a href="/projects/${project.id}">${project.title}</a></td>
 					<td><c:out value="${project.lead.firstName}"></c:out></td>
-					<td><fmt:formatDate value="${project.dueDate}" pattern="MMMM dd"/></td>
+					<td><fmt:formatDate value="${project.deadline}" pattern="MMMM dd"/></td>
 					<c:if test = "${project.lead.id==user.id}">
 				       <td><a href="/projects/edit/${project.id}">Edit Project</a></td>
 				    </c:if>

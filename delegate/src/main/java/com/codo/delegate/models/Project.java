@@ -37,8 +37,8 @@ public class Project {
     private String description;
     
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @NotNull(message="Due Date is required!")
-    private Date dueDate;
+    @NotNull(message="A deadline is required!")
+    private Date deadline;
     
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -87,11 +87,11 @@ public class Project {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Date getDueDate() {
-		return dueDate;
+	public Date getDeadline() {
+		return deadline;
 	}
-	public void setDueDate(Date dueDate) {
-		this.dueDate = dueDate;
+	public void setDeadline(Date deadline) {
+		this.deadline = deadline;
 	}
 	public Date getCreatedAt() {
 		return createdAt;
