@@ -35,20 +35,20 @@ public class MainController {
 	    return "index.jsp";
 	}
 	
-	@PostMapping("/register")
-	public String register(@Valid @ModelAttribute("newUser") User newUser, 
-			BindingResult result, Model model, HttpSession session) {
-
-	    User user = userService.register(newUser, result);
-	     
-	    if(result.hasErrors()) {
-	        model.addAttribute("newLogin", new LoginUser());
-	        return "index.jsp";
-	    }
-	    session.setAttribute("userId", user.getId());
-	 
-	    return "redirect:/dashboard";
-	}
+    @PostMapping("/register")
+    public String register(@Valid @ModelAttribute("newUser") User newUser, 
+            BindingResult result, Model model, HttpSession session) {
+        
+    	User u = userService.register(newUser, result);
+    	 
+    	if(u == null) {
+             model.addAttribute("newLogin", new LoginUser());
+             return "index.jsp";
+         }
+    	
+    	session.setAttribute("userId", u.getId());
+        return "redirect:/dashboard";
+    }
 	
 	@PostMapping("/login")
 	public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, 
